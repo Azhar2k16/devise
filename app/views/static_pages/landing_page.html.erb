@@ -1,13 +1,41 @@
-    <div class="jumbotron">
-    <h1 class="display-4">HOME PAGE</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quos culpa veniam neque est aut, eveniet atque ipsam officia consectetur veritatis maiores beatae, fugit impedit non voluptate porro omnis eaque!</p>
-    </div>
-    <%= link_to privacy_path, class: "btn btn-primary" do %>
-        <i class="far fa-hand-point-right"></i>
-        Policy
-    <% end %>
-    
+<div class="jumbotron">
+  <h1 class="display-4">O-Auth Application</h1>
+  <p class="lead">
+    This is a simple user auth application, which uses devise Gem and bootstrap 5 NavBar to manage all
+    the User-Management Features.
+  </p>
+  <hr class="my-4" />
+  <p>
+    <b>Database Authenticatable:</b> hashes and stores a password in the database to
+    validate the authenticity of a user while signing in. The authentication can
+    be done both through POST requests or HTTP Basic Authentication.
+    <br>
+    <b>Omniauthable:</b> adds OmniAuth (https://github.com/omniauth/omniauth) support.
+    <br>
+    <b>Confirmable:</b> sends emails with confirmation instructions and verifies
+    whether an account is already confirmed during sign in.
+    <br>
+    <b>Recoverable:</b> resets the user password and sends reset instructions.
 
+    Registerable: handles
+    signing up users through a registration process, also allowing them to edit
+    and destroy their account.
+    <br>
+    <b>Rememberable:</b> manages generating and clearing a token for remembering the user from a saved cookie.
+    <br>
+    <b>Trackable:</b> tracks sign in count, timestamps and IP address. Validatable: provides validations of
+    email and password. It's optional and can be customized, so you're able to
+    define your own validations.
+    <br>
+    <b>Lockable:</b> locks an account after a specified
+    number of failed sign-in attempts. Can unlock via email or after a specified
+    time period.It uses utility classes for typography and spacing to space
+    content out within the larger container.
+  </p>
+  <p>
+    <i>More Devise Functionality is on it's way stay tunned</i> :)
+  </p>
+</div>
+<%= link_to privacy_path, class: "btn btn-primary" do %>
+<i class="far fa-hand-point-right"></i>
+Policy <% end %>
