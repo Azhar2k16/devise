@@ -13,6 +13,7 @@ class User < ApplicationRecord
            password: Devise.friendly_token[0,20]
         )
       end
+      User.update_all confirmed_at: DateTime.now
       user
   end
 end
