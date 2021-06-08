@@ -135,6 +135,8 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 1.6.2, < 3)
       rack-protection
+    omniauth-facebook (8.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-github (2.0.0)
       omniauth (~> 2.0)
       omniauth-oauth2 (~> 1.7.1)
@@ -266,6 +268,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise (~> 4.8)
   jbuilder (~> 2.7)
+  omniauth-facebook (~> 8.0)
   omniauth-github (~> 2.0)
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
