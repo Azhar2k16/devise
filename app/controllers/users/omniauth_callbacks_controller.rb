@@ -8,6 +8,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     handle_auth "GitHub"
   end
 
+  def twitter
+    handle_auth "Twitter"
+  end
+
   def handle_auth(kind)
         @user = User.from_omniauth(request.env['omniauth.auth'])
 
