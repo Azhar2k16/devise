@@ -276,9 +276,24 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # config.omniauth Rails.application.credentials[Rails.env.to_sym][:github][:id], Rails.application.credentials[Rails.env.to_sym][:github][:secret]
   # config.omniauth :github, 'Rails.application.credentials.dig(:github, :id)', 'Rails.application.credentials.dig(:github, :secret)'
-  config.omniauth :twitter, 'Rails.application.credentials.dig(:twitter, :id)', 'Rails.application.credentials.dig(:twitter, :secret)'
-  config.omniauth :facebook, 'Rails.application.credentials.dig(:facebook, :id)', 'Rails.application.credentials.dig(:facebook, :secret)'
-  config.omniauth :google_oauth2, 'Rails.application.credentials.dig(:google, :id)', 'Rails.application.credentials.dig(:google, :secret)'
+
+  # config.omniauth :twitter, 'Rails.application.credentials.dig(:twitter, :id)', 'Rails.application.credentials.dig(:twitter, :secret)'
+  # config.omniauth :facebook, 'Rails.application.credentials.dig(:facebook, :id)', 'Rails.application.credentials.dig(:facebook, :secret)'
+  # config.omniauth :google_oauth2, 'Rails.application.credentials.dig(:google, :id)', 'Rails.application.credentials.dig(:google, :secret)'
+
+  config.omniauth :twitter, 'XEN8NHK7g2sDKAl3ZvJZQVUvC', 'O4NcplmbWTB3rmq14JQPapCprJhm6MFFL6cWg8dfL5KdUHmyE7'
+  config.omniauth :facebook, '309025200889458', '54681b5b09fb3e759cf48df407781356'
+  config.omniauth :github, '181932427636-si3r1gh8q2kj6k8dqjgqj0jsfu7bm0o5.apps.googleusercontent.com', 'L9M3ZSnac2lubI8XcL5PpIqs'
+
+#   twitter:
+#   id: XEN8NHK7g2sDKAl3ZvJZQVUvC
+#   secret: O4NcplmbWTB3rmq14JQPapCprJhm6MFFL6cWg8dfL5KdUHmyE7
+# facebook:
+#   id: 309025200889458
+#   secret: 54681b5b09fb3e759cf48df407781356
+# google:
+#   id: 181932427636-si3r1gh8q2kj6k8dqjgqj0jsfu7bm0o5.apps.googleusercontent.com
+#   secret: L9M3ZSnac2lubI8XcL5PpIqs
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
