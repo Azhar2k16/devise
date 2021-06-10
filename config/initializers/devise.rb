@@ -277,7 +277,7 @@ Devise.setup do |config|
   config.omniauth :github, 'Rails.application.credentials.dig(:github, :id)', 'Rails.application.credentials.dig(:github, :secret)'
   config.omniauth :twitter, 'Rails.application.credentials.dig(:twitter, :id)', 'Rails.application.credentials.dig(:twitter, :secret)'
   config.omniauth :facebook, 'Rails.application.credentials.dig(:facebook, :id)', 'Rails.application.credentials.dig(:facebook, :secret)'
-  config.omniauth :google_oauth2, 'Rails.application.credentials.dig(:google, :id)', 'Rails.application.credentials.dig(:google, :secret'
+  config.omniauth :google_oauth2, 'Rails.application.credentials.dig(:google, :id)', 'Rails.application.credentials.dig(:google, :secret)'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
