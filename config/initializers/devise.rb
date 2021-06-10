@@ -274,7 +274,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth Rails.application.credentials[Rails.env.to_sym][:github][:id], Rails.application.credentials[Rails.env.to_sym][:github][:secret]
+  # config.omniauth Rails.application.credentials[Rails.env.to_sym][:github][:id], Rails.application.credentials[Rails.env.to_sym][:github][:secret]
   # config.omniauth :github, 'Rails.application.credentials.dig(:github, :id)', 'Rails.application.credentials.dig(:github, :secret)'
   config.omniauth :twitter, 'Rails.application.credentials.dig(:twitter, :id)', 'Rails.application.credentials.dig(:twitter, :secret)'
   config.omniauth :facebook, 'Rails.application.credentials.dig(:facebook, :id)', 'Rails.application.credentials.dig(:facebook, :secret)'
