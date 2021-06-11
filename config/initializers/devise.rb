@@ -274,14 +274,16 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  # config.omniauth Rails.application.credentials[Rails.env.to_sym][:github][:id], Rails.application.credentials[Rails.env.to_sym][:github][:secret]
+  # config.omniauth Rails.application.credentials[Rails.env.to_sym][:twitter][:access_key_id], Rails.application.credentials[Rails.env.to_sym][:twitter][:secret_access_key]
   # config.omniauth :github, 'Rails.application.credentials.dig(:github, :id)', 'Rails.application.credentials.dig(:github, :secret)'
 
   # config.omniauth :twitter, 'Rails.application.credentials.dig(:twitter, :id)', 'Rails.application.credentials.dig(:twitter, :secret)'
   # config.omniauth :facebook, 'Rails.application.credentials.dig(:facebook, :id)', 'Rails.application.credentials.dig(:facebook, :secret)'
   # config.omniauth :google_oauth2, 'Rails.application.credentials.dig(:google, :id)', 'Rails.application.credentials.dig(:google, :secret)'
 
+  # config.omniauth :twitter, 'XEN8NHK7g2sDKAl3ZvJZQVUvC', 'O4NcplmbWTB3rmq14JQPapCprJhm6MFFL6cWg8dfL5KdUHmyE7'
   config.omniauth :twitter, 'XEN8NHK7g2sDKAl3ZvJZQVUvC', 'O4NcplmbWTB3rmq14JQPapCprJhm6MFFL6cWg8dfL5KdUHmyE7'
+  config.omniauth :github, 'c2dd3c6036c7071c58f9', '129a77b8d1c0cb5663861d1b4d41ddde8b77dd95'
   config.omniauth :facebook, '309025200889458', '54681b5b09fb3e759cf48df407781356'
   config.omniauth :github, '181932427636-si3r1gh8q2kj6k8dqjgqj0jsfu7bm0o5.apps.googleusercontent.com', 'L9M3ZSnac2lubI8XcL5PpIqs'
 
