@@ -11,4 +11,4 @@ Lockable: locks an account after a specified number of failed sign-in attempts. 
 
 More Devise Functionality is on it's way stay tunned :)
 
-Click on the Demo Button to see the app: [Demo](http://o-authy.herokuapp.com/users/sign_in)
+Click on the Demo Button to see the app: [Demo](http://devise.azrklm.xyz/users/sign_in)
