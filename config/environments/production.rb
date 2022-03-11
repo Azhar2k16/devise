@@ -5,13 +5,13 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_mailer.default_url_options = {host: "o-authy.heroku.com", protocol: "https"}
+  config.action_mailer.default_url_options = {host: "o-auth2.herokuapp.com", protocol: "https"}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              Rails.application.credentials.dig(:gmail, :smtp),
     port:                 587,
-    domain:               'o-authy.heroku.com',
+    domain:               'o-auth2.herokuapp.com',
     user_name:            Rails.application.credentials.dig(:gmail, :email),
     password:             Rails.application.credentials.dig(:gmail, :pw),
     authentication:       'plain',
