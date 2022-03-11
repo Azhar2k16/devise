@@ -10,6 +10,7 @@ import "channels"
 import "bootstrap"
 import "@fortawesome/fontawesome-free/css/all"
 import "../stylesheets/application"
+global.toastr = require("toastr")
 
 Rails.start()
 Turbolinks.start()
