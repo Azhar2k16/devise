@@ -5,13 +5,13 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_mailer.default_url_options = {host: "o-authy.herokuapp.com", protocol: "https"}
+  config.action_mailer.default_url_options = {host: "devise.azrklm.xyz", protocol: "https"}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              Rails.application.credentials.dig(:gmail, :smtp),
     port:                 587,
-    domain:               'o-authy.heroku.com',
+    domain:               'devise.azrklm.xyz',
     user_name:            Rails.application.credentials.dig(:gmail, :email),
     password:             Rails.application.credentials.dig(:gmail, :pw),
     authentication:       'plain',
@@ -60,7 +60,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = false
+  config.force_ssl = true
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
