@@ -13,4 +13,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: fantaprod
+  username: deploy
+  password: Rails.application.credentials.dig(:production, :db_password)
