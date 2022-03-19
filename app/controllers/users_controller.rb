@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     
-    before_action :require_admin, only: [:edit, :update, :ban, :destroy]
+    before_action :require_admin, only: [:edit, :update, :ban, :destroy, :resend_confirmation_instructions]
+    before_action :require_admin_or_inviter, only: [:resend_invitation]
 
     def index
         @users = User.all.order(created_at: :desc)
@@ -19,10 +20,8 @@ class UsersController < ApplicationController
       else
         render :edit
       end
-     end
+    end
 
-     
-     
     def show
         @user = User.find(params[:id])
     end
@@ -45,6 +44,36 @@ class UsersController < ApplicationController
         redirect_to users_path, notice: 'User successfully  Deleted'
         
     end
+
+    def resend_confirmation_instructions
+        @user = User.find(params[:id])
+      if @user.confirmed? ==false && @user.created_by_invite? == false
+        @user.resend_confirmation_instructions
+        redirect_to @user, notice: "Confirmation Instructions Were Resent!"
+      else
+        redirect_to @user, alert: "User already confirmed"
+      end
+
+    end
+
+    def resend_invitation
+        @user = User.find(params[:id])
+      if  @user.invitation_accepted? == false
+          @user = User.find(params[:id])
+          @user.invite!
+          redirect_to @user, notice: "Inviation Resent!"
+      else
+        redirect_to @user, alert: "User already confirmed"
+      end
+
+    end
+
+    def require_admin_or_inviter
+        @user = User.find(params[:id])
+        unless current_user.admin? || @user.invited_by == current_user
+          redirect_to root_path, alert: "You are not Authorized"
+        end
+    end
     
     private
 
@@ -53,8 +82,12 @@ class UsersController < ApplicationController
     end
 
     def require_admin
-        unless current_user.admin?
-            redirect_to root_path, alert: "You are not Authorized"
+      unless current_user.admin?
+        redirect_to root_path, alert: "You are not Authorized"
     end
+
+
+
+    
  end
 end

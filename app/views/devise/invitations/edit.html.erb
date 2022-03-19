@@ -1,0 +1,41 @@
+<div class="col-lg-6 mx-lg-auto">
+  <div class="card shadow">
+    <div class="card-header">
+      <h2 class="card-title text-center"><%= t "devise.invitations.edit.header" %></h2>
+    </div>
+    <div class="card-body">
+
+      <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= f.hidden_field :invitation_token, readonly: true %>
+
+        <% if f.object.class.require_password_on_accepting %>
+          <div class="field">
+            <%= f.label :password, class: 'form-label'%>
+            <%= f.password_field :password, class: 'form-control mt-2', placeholder: 'Enter the Password' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation, class: 'form-label mt-4' %>
+            <%= f.password_field :password_confirmation, class: 'form-control mt-2', placeholder: 'Enter the Password Again' %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit t("devise.invitations.edit.submit_button"), class: 'btn btn-primary mt-4' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

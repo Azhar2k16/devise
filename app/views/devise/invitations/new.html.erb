@@ -1,0 +1,35 @@
+<div class="col-lg-6 mx-lg-auto">
+  <div class="card shadow">
+    <div class="card-header">
+      <h2 class="card-title text-center"><%= t "devise.invitations.new.header" %></h2>
+    </div>
+    <div class="card-body">
+      <%= form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <% resource.class.invite_key_fields.each do |field| -%>
+          <div class="form-label">
+            <%= f.label field, class: 'form-label' %><br />
+            <%= f.text_field field, class: 'form-control', placeholder: 'Enter the Email ID' %>
+          </div>
+        <% end -%>
+
+        <div class="actions">
+          <%= f.submit t("devise.invitations.new.submit_button"), class: 'btn btn-primary mt-2' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

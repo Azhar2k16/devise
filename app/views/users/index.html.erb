@@ -4,7 +4,7 @@
 <div class="table-responsive">
     <table class="table table-striped table-hover table-bordered table-sm">
         <thead>
-            <tr>
+            <tr class= "text-center">
                 <th>Id</th>
                 <th>Email</th>
                 <th>Confirmed</th>
@@ -12,35 +12,55 @@
                 <th>Name</th>
                 <th>Image</th>
                 <th>Roles</th>
-                <th class="colspan-3"></th>
+                <th>Created by Invite?</th>
+                <th>Invitation Accepted?</th>
+                <th></th>
+                <th>Invited By</th>
+                <th>Actions</th>
             </tr>
         </thead>
 
         <tbody>
             <% @users.each do |user| %>
 
-                <tr>
-                    <td><%= link_to user.id, user_path(user)%></td>
-                    <td><%= user.email %></td>
-                    <td><%= boolen_label(user.confirmed?)%></td>
-                    <td><%= boolen_label(user.access_locked?)%></td>
-                    <td><%= user.name%></td>
-                    <td>
-                        <% if user.image.present? %>
-                            <%= image_tag user.image, size: "30x30" %>
-                        <% end %>
+                <tr class= "text-center">
+                    <td><%= link_to user.id, user_path(user)%></td>         
+                    <td><%= user.email %></td>                              
+                    <td>                                                    
+                    <%= boolen_label(user.confirmed?)%>
                     </td>
-                    <td><%= user.active_roles.join(", ") %></td>
-                    <td>
+                    <td><%= boolen_label(user.access_locked?)%></td>        
+                    <td><%= user.name%></td>                                
+                    <td>                                                    
+                    <% if user.image.present? %>
+                        <%= image_tag user.image, size: "30x30" %>
+                    <% end %>
+                    </td>
+                    <td><%= user.active_roles.join(", ") %></td>            
+                    <td>                                                    
+                    <%= boolen_label(user.invitation_accepted?) %>
+                    <td><%= boolen_label(user.created_by_invite?) %><td>    
+                    <td><%= user.invited_by %></td>                                              
+                    </td>
+                        
+                    <td class="text-nowrap mt-1">
+                        <% if current_user.admin? || user.invited_by == current_user %>
+                            <% if user.created_by_invite? && user.invitation_accepted? == false %>
+                                <%= link_to 'Send Invite',  resend_invitation_user_path(user), class: 'btn btn-sm btn-warning', method: :patch %>
+                            <% end %>
+                        <% end %>
                         <% if current_user.admin? %>
-                            <%= link_to 'Edit roles', edit_user_path(user), class: 'btn btn-sm btn-primary' %>
-                            <%= link_to ban_status(user), ban_user_path(user), method: :patch, class: 'btn btn-sm btn-danger'   %>
+                            <% if user.confirmed? ==false && user.created_by_invite? == false %>
+                                <%= link_to 'Send confirmation',  resend_confirmation_instructions_user_path(user), class: 'btn btn-sm btn-secondary', method: :patch%>
+                            <% end %>
+                            <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-sm btn-primary' %>
+                            <%= link_to ban_status(user), ban_user_path(user), method: :patch, class: 'btn btn-sm btn-danger'%>
                             <%= link_to 'Delete',user, method: :delete, data: {confirm: "Are you sure"}, class: 'btn btn-sm btn-danger'    %>
                         <% end %>
                     </td>
-                    </tr>
-                <% end %>
+                    
                 </tr>
+            <% end %>
 
         </tbody>
     </table>
