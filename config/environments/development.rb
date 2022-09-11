@@ -7,6 +7,7 @@ Rails.application.configure do
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+  # config.force_ssl = true
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -78,15 +79,5 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    port: 587,
-    address: 'email-smtp.us-west-2.amazonaws.com',
-    user_name: 'AKIARHIHNNZB234ZJ5W2',
-    password: 'BGeGVMO/AU9QtRB3tyiCYRt83Qes6cMAq4gULdKkqgOh',
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
-
-
+  
 end
