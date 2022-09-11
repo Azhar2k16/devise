@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'auth@authy.com'
+  config.mailer_sender = 'eevo71@gmail.com'
   config.scoped_views = true
 
 
@@ -326,10 +326,11 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.omniauth :twitter, Rails.application.credentials.dig(:twitter, :id), Rails.application.credentials.dig(:twitter, :secret)
-  config.omniauth :github, Rails.application.credentials[Rails.env.to_sym][:github][:id], Rails.application.credentials[Rails.env.to_sym][:github][:secret], scope: 'user'
+  config.omniauth :github, Rails.application.credentials.dig(:github, :id), Rails.application.credentials.dig(:github, :secret)
   config.omniauth :facebook, Rails.application.credentials.dig(:facebook, :id), Rails.application.credentials.dig(:facebook, :secret)
   config.omniauth :google_oauth2, Rails.application.credentials.dig(:google_oauth2, :id), Rails.application.credentials.dig(:google_oauth2, :secret)
-
+  
+  # config.omniauth :github, Rails.application.credentials[Rails.env.to_sym][:github][:id], Rails.application.credentials[Rails.env.to_sym][:github][:secret], scope: 'user'
 
 
   # ==> Warden configuration

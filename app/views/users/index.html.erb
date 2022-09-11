@@ -12,8 +12,8 @@
                 <th>Name</th>
                 <th>Image</th>
                 <th>Roles</th>
-                <th>Created by Invite?</th>
                 <th>Invitation Accepted?</th>
+                <th>Created by Invite?</th>
                 <th></th>
                 <th>Invited By</th>
                 <th>Actions</th>
@@ -26,7 +26,7 @@
                 <tr class= "text-center">
                     <td><%= link_to user.id, user_path(user)%></td>         
                     <td><%= user.email %></td>                              
-                    <td>                                                    
+                    <td>                                    
                     <%= boolen_label(user.confirmed?)%>
                     </td>
                     <td><%= boolen_label(user.access_locked?)%></td>        

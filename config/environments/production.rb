@@ -5,17 +5,26 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_mailer.default_url_options = {host: "o-auth2.herokuapp.com", protocol: "https"}
+  config.action_mailer.default_url_options = {host: "localhost:3000", protocol: "http"}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              Rails.application.credentials.dig(:gmail, :smtp),
-    port:                 587,
-    domain:               'o-auth2.herokuapp.com',
-    user_name:            Rails.application.credentials.dig(:gmail, :email),
-    password:             Rails.application.credentials.dig(:gmail, :pw),
-    authentication:       'plain',
-    enable_starttls_auto: true, }
+    address: 'email-smtp.us-west-2.amazonaws.com',
+    user_name: 'AKIARHIHNNZB234ZJ5W2',
+    password: 'BGeGVMO/AU9QtRB3tyiCYRt83Qes6cMAq4gULdKkqgOh',
+    authentication: :plain,
+    enable_starttls_auto: true
+
+
+
+
+    # address:              Rails.application.credentials.dig(:gmail, :smtp),
+    # port:                 587,
+    # domain:               'o-auth2.herokuapp.com',
+    # user_name:            Rails.application.credentials.dig(:gmail, :email),
+    # password:             Rails.application.credentials.dig(:gmail, :pw),
+    # authentication:       'plain',
+    # enable_starttls_auto: true, }
 
 
   # Eager load code on boot. This eager loads most of Rails and

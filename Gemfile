@@ -16,6 +16,7 @@ gem 'omniauth-twitter', '~> 1.4'
 gem 'omniauth-facebook', '~> 8.0'
 gem "omniauth-rails_csrf_protection"
 gem 'devise_invitable', '~> 2.0', '>= 2.0.6'
+gem 'invisible_captcha'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
